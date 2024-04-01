@@ -4,24 +4,23 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import oracle.sql.DATE;
 
-import java.math.BigInteger;
 import java.sql.Date;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
-@Table(name = "PhieuThu")
-public class PhieuThu {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "PhieuPhat")
+public class PhieuPhat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MaPhieuThu")
+    @Column(name = "MaPhieuPhat")
     private int id;
-    private DATE NgayLap;
-    @Column(columnDefinition = "smallint")
-    private BigInteger SoTien;
+    private Date NgayLap;
+    @Column(columnDefinition = "money")
+    private int SoTienPhat;
+    @Column(columnDefinition = "nvarchar2(40)")
     private String NoiDung;
 
 }
