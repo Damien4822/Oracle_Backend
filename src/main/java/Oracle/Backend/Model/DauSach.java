@@ -1,9 +1,12 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -19,5 +22,7 @@ public class DauSach {
     private String TenDauSach;
     @Column(columnDefinition = "number (4,0)")
     private int NamXuatBan;
-
+    @ManyToMany(mappedBy = "dauSachList")
+    @JsonIgnore
+    private List<TacGia> tacGiaList;
 }

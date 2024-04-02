@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,4 +27,10 @@ public class DichGia {
     @Nullable
     @Column(columnDefinition = "number(4,0)")
     private Date NamMat;
+    @ManyToMany
+    @JoinTable(
+            name = "QuyenSach_dichGiaList",
+            joinColumns = @JoinColumn(name = "DichGia_MaDichGia"),
+            inverseJoinColumns = @JoinColumn(name = "QuyenSach_MaQuyenSach"))
+    private List<QuyenSach> quyenSachList;
 }

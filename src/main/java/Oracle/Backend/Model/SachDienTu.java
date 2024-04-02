@@ -1,5 +1,6 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,5 +20,8 @@ public class SachDienTu {
     private int id;
     @Lob
     private Blob noiDung;
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "MaQuyenSach",nullable = false)
+    @JsonIgnore
+    private QuyenSach quyenSach;
 }

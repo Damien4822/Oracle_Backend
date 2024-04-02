@@ -1,11 +1,13 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,5 +25,10 @@ public class TacGia {
     private int NamSinh;
     @Column(columnDefinition = "number(4,0)")
     private int NamMat;
-
+    @ManyToMany
+    @JoinTable(
+            name = "DauSach_tacGiaList",
+            joinColumns = @JoinColumn(name = "TacGia_MaTacGia"),
+            inverseJoinColumns = @JoinColumn(name = "DauSach_MaDauSach"))
+    private List<DauSach> dauSachList;
 }
