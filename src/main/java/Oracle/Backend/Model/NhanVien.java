@@ -1,5 +1,6 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,4 +26,11 @@ public class NhanVien {
     private String Email;
     @Column(name="SDT",columnDefinition = "nvarchar2(14)",unique = true)
     private String SDT;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="MaChucVu",nullable = false)
+    @JsonIgnore
+    private ChucVu chucvu;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "TaiKhoan_id",referencedColumnName = "MaTK")
+    private TaiKhoan taiKhoan;
 }

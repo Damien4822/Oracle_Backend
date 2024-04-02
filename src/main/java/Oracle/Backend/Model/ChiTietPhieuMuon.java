@@ -15,8 +15,8 @@ public class ChiTietPhieuMuon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MaChiTietPhieuMuon")
     private int id;
-    @Column(columnDefinition = "smallint")
+    @Column(columnDefinition = "integer")
     private int ThanhTien;
-    @Column(columnDefinition = "tinyint")
+    @Column(columnDefinition = "number(2,0)")
     private int SoLuong;
 }

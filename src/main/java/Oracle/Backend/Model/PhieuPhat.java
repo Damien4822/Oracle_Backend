@@ -18,7 +18,7 @@ public class PhieuPhat {
     @Column(name = "MaPhieuPhat")
     private int id;
     private Date NgayLap;
-    @Column(columnDefinition = "money")
+    @Column(columnDefinition = "integer")
     private int SoTienPhat;
     @Column(columnDefinition = "nvarchar2(40)")
     private String NoiDung;

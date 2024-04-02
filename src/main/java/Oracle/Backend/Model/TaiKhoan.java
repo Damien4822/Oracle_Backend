@@ -1,5 +1,6 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,4 +24,8 @@ public class TaiKhoan {
     private String MatKhau;
     @Column(name="TinhTrang",columnDefinition = "number(1,0)",nullable = false)
     private int TinhTrang;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "MaPLTK",nullable = false)
+    @JsonIgnore
+    private PhanLoaiTaiKhoan phanloai;
 }

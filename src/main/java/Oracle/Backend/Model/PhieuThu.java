@@ -20,7 +20,7 @@ public class PhieuThu {
     @Column(name = "MaPhieuThu")
     private int id;
     private DATE NgayLap;
-    @Column(columnDefinition = "smallint")
+    @Column(columnDefinition = "integer")
     private BigInteger SoTien;
     private String NoiDung;
 

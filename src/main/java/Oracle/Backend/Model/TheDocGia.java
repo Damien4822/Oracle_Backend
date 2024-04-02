@@ -1,5 +1,6 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,5 +20,12 @@ public class TheDocGia {
     private int MaTheDocGia;
     private DATE NgayLap;
     private DATE NgayHetHan;
-
+    private byte tinhtrang;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "MaDocGia",nullable = false)
+    @JsonIgnore
+    private DocGia docgia;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "MaPhieuDK",referencedColumnName = "MaPhieuDK")
+    private PhieuDKTheDocGia phieuDK;
 }

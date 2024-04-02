@@ -1,5 +1,6 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,6 +37,14 @@ public class DocGia {
     @Lob
     @Nullable
     private Blob HinhAnhMinhChung;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "MaPLDG",nullable = false)
+    @JsonIgnore
+    private PhanLoaiDocGia phanloai;
+    @Nullable
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "TaiKhoan_id",referencedColumnName = "MaTK")
+    private TaiKhoan taiKhoan;
     public int getMaDocGia() {
         return MaDocGia;
     }

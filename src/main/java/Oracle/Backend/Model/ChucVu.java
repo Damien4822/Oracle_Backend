@@ -5,8 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+import java.util.ArrayList;
+import java.util.List;
 
+@Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ChucVu")
@@ -19,4 +22,5 @@ public class ChucVu {
     private String TenChucVu;
     @Column(name = "MoTa",columnDefinition = "nvarchar2(40)",nullable = false)
     private String MoTa;
+
 }

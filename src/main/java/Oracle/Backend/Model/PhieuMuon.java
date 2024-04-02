@@ -20,7 +20,7 @@ public class PhieuMuon {
     private Date NgayLap;
     private Date NgayMuon;
     private Date NgayTra;
-    @Column(columnDefinition = "smallint")
+    @Column(columnDefinition = "integer")
     private int TongTien;
 
 }

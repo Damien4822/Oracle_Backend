@@ -17,7 +17,7 @@ public class QuyenSach {
     private int id;
     @Column(columnDefinition = "number(4,0)")
     private int NamTaiBan;
-    @Column(columnDefinition = "smallint")
+    @Column(columnDefinition = "integer")
     private int gia;
 
 }
