@@ -25,6 +25,6 @@ public class ChiTietPhieuMuon {
     @JsonIgnore
     private PhieuMuon phieuMuon;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "MaQuyenSach", referencedColumnName = "QuyenSach_id")
+    @JoinColumn(name = "QuyenSach_id", referencedColumnName = "MaQuyenSach")
     private QuyenSach quyenSach;
 }

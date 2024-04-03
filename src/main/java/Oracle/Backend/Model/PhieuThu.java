@@ -1,6 +1,7 @@
 package Oracle.Backend.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,4 +33,8 @@ public class PhieuThu {
     @JoinColumn(name="MaNV",nullable = false)
     @JsonIgnore
     private NhanVien nhanVien;
+    @Nullable
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ChiTietPhieuThu_id", referencedColumnName = "MaChiTietPhieuThu")
+    private ChiTietPhieuThu chiTietPhieuThu;
 }

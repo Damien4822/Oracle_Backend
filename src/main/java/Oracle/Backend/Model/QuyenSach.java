@@ -37,6 +37,5 @@ public class QuyenSach {
     @JoinColumn(name="MaTinhTrang",nullable = false)
     @JsonIgnore
     private TinhTrangSach tinhTrangSach;
-    @OneToOne(mappedBy = "ChiTietPhieuMuon")
-    private ChiTietPhieuMuon chiTietPhieuMuon;
+
 }
