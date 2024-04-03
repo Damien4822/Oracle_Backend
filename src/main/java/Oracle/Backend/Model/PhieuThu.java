@@ -35,6 +35,6 @@ public class PhieuThu {
     private NhanVien nhanVien;
     @Nullable
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ChiTietPhieuThu_id", referencedColumnName = "MaChiTietPhieuThu")
+    @JoinColumn(name = "MaChiTietPhieuThu", referencedColumnName = "MaChiTietPhieuThu")
     private ChiTietPhieuThu chiTietPhieuThu;
 }

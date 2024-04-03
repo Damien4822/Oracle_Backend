@@ -31,6 +31,6 @@ public class NhanVien {
     @JsonIgnore
     private ChucVu chucvu;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "TaiKhoan_id",referencedColumnName = "MaTK")
+    @JoinColumn(name = "MaTK",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;
 }

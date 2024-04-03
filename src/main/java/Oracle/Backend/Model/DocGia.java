@@ -43,7 +43,7 @@ public class DocGia {
     private PhanLoaiDocGia phanloai;
     @Nullable
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "TaiKhoan_id",referencedColumnName = "MaTK")
+    @JoinColumn(name = "MaTaiKhoan",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;
     public int getMaDocGia() {
         return MaDocGia;

@@ -18,14 +18,14 @@ public class ChiTietPhieuThu {
     private int id;
     @Nullable
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "PhieuDKTheDocGia_id", referencedColumnName = "MaPhieuDK")
+    @JoinColumn(name = "MaPhieuDKTheDocGia", referencedColumnName = "MaPhieuDK")
     private PhieuDKTheDocGia phieuDKTheDocGia;
     @Nullable
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "PhieuMuon_id", referencedColumnName = "MaPhieuMuon")
+    @JoinColumn(name = "MaPhieuMuon", referencedColumnName = "MaPhieuMuon")
     private PhieuMuon phieuMuon;
     @Nullable
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "PhieuPhat_id", referencedColumnName = "MaPhieuPhat")
+    @JoinColumn(name = "MaPhieuPhat", referencedColumnName = "MaPhieuPhat")
     private PhieuPhat phieuPhat;
 }
