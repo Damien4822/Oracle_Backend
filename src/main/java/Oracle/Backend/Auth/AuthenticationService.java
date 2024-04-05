@@ -58,7 +58,7 @@ public class AuthenticationService {
 
         TaiKhoan taiKhoan = repo.findTaiKhoanByTenDangNhap(request.getTenDangNhap())
                 .orElseThrow();
-        var jwtToken = jwtService.generateToken(taiKhoan);
+        String jwtToken = jwtService.generateToken(taiKhoan);
         AuthenticationResponse response= new AuthenticationResponse();
         response.setToken(jwtToken);
         System.out.println("this is token on authenticate");
