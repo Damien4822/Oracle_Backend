@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PhanLoaiTaiKhoanRepository extends JpaRepository<PhanLoaiTaiKhoan,Integer> {
+    PhanLoaiTaiKhoan findPhanLoaiTaiKhoanById(int id);
 }

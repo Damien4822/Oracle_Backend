@@ -21,13 +21,13 @@ public class DocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MaDocGia",  nullable = false)
-    private int MaDocGia;
+    private int maDocGia;
     @Column(name = "TenDocGia", columnDefinition = "nvarchar2(40)", nullable = false,length = 40)
-    private String TenDocGia;
+    private String tenDocGia;
     @Column(name = "NgaySinh", columnDefinition = "Date", nullable = false)
     private Date NgaySinh;
     @Column(name = "Email", columnDefinition = "nvarchar2(40)", nullable = false,length = 40)
-    private String Email;
+    private String email;
 
     @Lob
     @Nullable
@@ -45,20 +45,46 @@ public class DocGia {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaTaiKhoan",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;
+
     public int getMaDocGia() {
-        return MaDocGia;
+        return maDocGia;
     }
 
     public void setMaDocGia(int maDocGia) {
-        MaDocGia = maDocGia;
+        this.maDocGia = maDocGia;
     }
 
     public String getTenDocGia() {
-        return TenDocGia;
+        return tenDocGia;
     }
 
     public void setTenDocGia(String tenDocGia) {
-        TenDocGia = tenDocGia;
+        this.tenDocGia = tenDocGia;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public PhanLoaiDocGia getPhanloai() {
+        return phanloai;
+    }
+
+    public void setPhanloai(PhanLoaiDocGia phanloai) {
+        this.phanloai = phanloai;
+    }
+
+    @Nullable
+    public TaiKhoan getTaiKhoan() {
+        return taiKhoan;
+    }
+
+    public void setTaiKhoan(@Nullable TaiKhoan taiKhoan) {
+        this.taiKhoan = taiKhoan;
     }
 
     public Date getNgaySinh() {
@@ -69,13 +95,7 @@ public class DocGia {
         NgaySinh = ngaySinh;
     }
 
-    public String getEmail() {
-        return Email;
-    }
 
-    public void setEmail(String email) {
-        Email = email;
-    }
 
     public Blob getAvatar() {
         return Avatar;
