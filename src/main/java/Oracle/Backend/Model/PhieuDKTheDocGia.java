@@ -1,6 +1,7 @@
 package Oracle.Backend.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class PhieuDKTheDocGia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int MaPhieuDK;
     private DATE NgayLap;
+    @Nullable
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaNV",nullable = false)
     @JsonIgnore

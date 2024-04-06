@@ -1,5 +1,6 @@
 package Oracle.Backend.Config;
 
+import Oracle.Backend.Model.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +29,9 @@ public class SecurityConfig {
                 .csrf(csrf-> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                                 .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/admin/**").hasAuthority(String.valueOf(Role.THUTHU))
+                                .requestMatchers("/docgia/**").hasAuthority(String.valueOf(Role.DOCGIA))
+                                .requestMatchers("/thuthu/**").hasAuthority(String.valueOf(Role.ADMIN))
                         //.hasAuthority("ADMIN")
                         //.requestMatchers("/users/**").hasAuthority("ADMIN")
                 )

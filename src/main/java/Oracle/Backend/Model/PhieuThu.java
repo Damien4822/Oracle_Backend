@@ -29,6 +29,7 @@ public class PhieuThu {
     @JoinColumn(name="MaDocGia",nullable = false)
     @JsonIgnore
     private DocGia docGia;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaNV",nullable = false)
     @JsonIgnore

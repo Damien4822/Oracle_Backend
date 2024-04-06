@@ -30,10 +30,9 @@ public class TaiKhoan implements UserDetails {
     private String matKhau;
     @Column(name="TinhTrang",columnDefinition = "number(1,0)",nullable = false)
     private int tinhTrang;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name= "MaPLTK",nullable = false)
-    @JsonIgnore
-    private PhanLoaiTaiKhoan phanloai;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "PhanLoaiTaiKhoan",columnDefinition = "nvarchar2(50)")
+    private Role phanLoaiTaiKhoan;
 
     public int getMaTK() {
         return maTK;
@@ -67,17 +66,17 @@ public class TaiKhoan implements UserDetails {
         this.tinhTrang = tinhTrang;
     }
 
-    public PhanLoaiTaiKhoan getPhanloai() {
-        return phanloai;
+    public Role getPhanLoaiTaiKhoan() {
+        return phanLoaiTaiKhoan;
     }
 
-    public void setPhanloai(PhanLoaiTaiKhoan phanloai) {
-        this.phanloai = phanloai;
+    public void setPhanLoaiTaiKhoan(Role phanLoaiTaiKhoan) {
+        this.phanLoaiTaiKhoan = phanLoaiTaiKhoan;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(String.valueOf(phanloai.getId())));
+        return List.of(new SimpleGrantedAuthority(String.valueOf(phanLoaiTaiKhoan.toString())));
     }
 
     @Override
