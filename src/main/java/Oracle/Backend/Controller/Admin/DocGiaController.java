@@ -1,8 +1,10 @@
-package Oracle.Backend.Controller;
+package Oracle.Backend.Controller.Admin;
 
 import Oracle.Backend.Model.DocGia;
+import Oracle.Backend.Model.NhanVien;
 import Oracle.Backend.Repository.DocGiaRepository;
 import Oracle.Backend.Service.DocGiaService;
+import Oracle.Backend.Service.NhanVienService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +16,7 @@ import java.util.List;
 @RequestMapping("/admin")
 @RestController
 @CrossOrigin(origins = "http://localhost:3000/")
-public class AdminController {
+public class DocGiaController {
     @Autowired
     private DocGiaService docGiaService;
     @GetMapping("/docgia/index")
@@ -41,4 +43,5 @@ public class AdminController {
         docGiaService.delete(id);
         return ResponseEntity.accepted().build();
     }
+
 }

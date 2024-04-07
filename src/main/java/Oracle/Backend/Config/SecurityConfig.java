@@ -31,7 +31,7 @@ public class SecurityConfig {
                                 .requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/admin/**").hasAuthority(String.valueOf(Role.THUTHU))
                                 .requestMatchers("/docgia/**").hasAuthority(String.valueOf(Role.DOCGIA))
-                                .requestMatchers("/thuthu/**").hasAuthority(String.valueOf(Role.ADMIN))
+                                .requestMatchers("/thuthu/**").hasAnyAuthority(String.valueOf(Role.ADMIN),String.valueOf(Role.THUTHU))
                         //.hasAuthority("ADMIN")
                         //.requestMatchers("/users/**").hasAuthority("ADMIN")
                 )

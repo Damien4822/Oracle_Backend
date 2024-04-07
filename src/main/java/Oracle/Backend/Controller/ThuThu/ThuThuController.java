@@ -1,4 +1,4 @@
-package Oracle.Backend.Controller;
+package Oracle.Backend.Controller.ThuThu;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;

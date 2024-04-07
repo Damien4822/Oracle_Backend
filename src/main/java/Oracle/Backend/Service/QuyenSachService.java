@@ -29,4 +29,8 @@ public class QuyenSachService {
     public void delete(Integer id){
         repo.deleteById(id);
     }
+    public List<QuyenSach> getAllByMaTinhTrang(Integer matinhtrang)
+    {
+        return repo.findAllByTinhTrangSach(matinhtrang);
+    }
 }

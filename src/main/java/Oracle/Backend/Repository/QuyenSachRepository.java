@@ -4,6 +4,9 @@ import Oracle.Backend.Model.QuyenSach;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface QuyenSachRepository extends JpaRepository<QuyenSach,Integer> {
+    List<QuyenSach> findAllByTinhTrangSach(Integer matinhtrang);
 }

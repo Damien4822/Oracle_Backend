@@ -38,4 +38,59 @@ public class QuyenSach {
     @JsonIgnore
     private TinhTrangSach tinhTrangSach;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getNamTaiBan() {
+        return NamTaiBan;
+    }
+
+    public void setNamTaiBan(int namTaiBan) {
+        NamTaiBan = namTaiBan;
+    }
+
+    public int getGia() {
+        return gia;
+    }
+
+    public void setGia(int gia) {
+        this.gia = gia;
+    }
+
+    public DauSach getDauSach() {
+        return dauSach;
+    }
+
+    public void setDauSach(DauSach dauSach) {
+        this.dauSach = dauSach;
+    }
+
+    public NhaXuatBan getNhaXuatBan() {
+        return nhaXuatBan;
+    }
+
+    public void setNhaXuatBan(NhaXuatBan nhaXuatBan) {
+        this.nhaXuatBan = nhaXuatBan;
+    }
+
+    public List<DichGia> getDichGiaList() {
+        return dichGiaList;
+    }
+
+    public void setDichGiaList(List<DichGia> dichGiaList) {
+        this.dichGiaList = dichGiaList;
+    }
+
+    public TinhTrangSach getTinhTrangSach() {
+        return tinhTrangSach;
+    }
+
+    public void setTinhTrangSach(TinhTrangSach tinhTrangSach) {
+        this.tinhTrangSach = tinhTrangSach;
+    }
 }

@@ -1,4 +1,4 @@
-package Oracle.Backend.Controller;
+package Oracle.Backend.Controller.DocGia;
 
 import Oracle.Backend.Model.DocGia;
 import Oracle.Backend.Service.DocGiaService;
