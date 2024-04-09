@@ -28,4 +28,8 @@ public class ChiTietPhieuMuonService {
     public void delete(Integer id){
         repo.deleteById(id);
     }
+    public List<ChiTietPhieuMuon> getAllByMaPhieuMuon(int maphieumuon)
+    {
+        return repo.findAllByMaPhieuMuon(maphieumuon);
+    }
 }
