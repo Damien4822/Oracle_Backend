@@ -33,4 +33,13 @@ public class PhieuMuon {
     @JoinColumn(name="MaNV",nullable = false)
     @JsonIgnore
     private NhanVien nhanVien;
+
+    @Nullable
+    public NhanVien getNhanVien() {
+        return nhanVien;
+    }
+
+    public void setNhanVien(@Nullable NhanVien nhanVien) {
+        this.nhanVien = nhanVien;
+    }
 }

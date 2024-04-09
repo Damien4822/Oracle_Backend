@@ -27,4 +27,12 @@ public class ChiTietPhieuMuon {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaQuyenSach", referencedColumnName = "MaQuyenSach")
     private QuyenSach quyenSach;
+
+    public ChiTietPhieuMuon(ChiTietPhieuMuon ct) {
+        this.id = ct.id;
+        ThanhTien = ct.ThanhTien;
+        SoLuong = ct.SoLuong;
+        this.phieuMuon = ct.phieuMuon;
+        this.quyenSach = ct.quyenSach;
+    }
 }

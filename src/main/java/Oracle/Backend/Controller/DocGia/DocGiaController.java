@@ -5,10 +5,7 @@ import Oracle.Backend.Service.DocGiaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +21,14 @@ public class DocGiaController {
     public ResponseEntity<List<DocGia>> getAll()
     {
         return ResponseEntity.ok(service.getAll());
+    }
+    @GetMapping("/docgia/{id}")
+    public ResponseEntity<DocGia> getOne(@PathVariable int id) {
+        DocGia docGia = service.getById(id);
+        if(docGia!=null) {
+            return ResponseEntity.ok(docGia);
+        }
+        else
+            return ResponseEntity.notFound().build();
     }
 }

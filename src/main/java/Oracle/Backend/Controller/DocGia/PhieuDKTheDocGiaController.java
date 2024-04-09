@@ -1,9 +1,6 @@
-package Oracle.Backend.Controller.ThuThu;
+package Oracle.Backend.Controller.DocGia;
 
-import Oracle.Backend.Model.ChucVu;
 import Oracle.Backend.Model.PhieuDKTheDocGia;
-import Oracle.Backend.Model.TinhTrangSach;
-import Oracle.Backend.Service.ChucVuService;
 import Oracle.Backend.Service.PhieuDKTheDocGiaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping("/thuthu")
+@RequestMapping("/docgia")
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
 public class PhieuDKTheDocGiaController {

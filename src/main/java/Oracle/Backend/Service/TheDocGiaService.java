@@ -4,6 +4,7 @@ import Oracle.Backend.Model.TaiKhoan;
 import Oracle.Backend.Model.TheDocGia;
 import Oracle.Backend.Repository.TaiKhoanRepository;
 import Oracle.Backend.Repository.TheDocGiaRepository;
+import oracle.jdbc.proxy._Proxy_;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +29,10 @@ public class TheDocGiaService {
     }
     public void delete(Integer id){
         repo.deleteById(id);
+    }
+    public List<TheDocGia> getAllByMaDocGia(Integer madocgia)
+    {
+
+        return repo.findAllByDocGia(madocgia);
     }
 }
