@@ -2,6 +2,7 @@ package Oracle.Backend.Controller.ThuThu;
 
 import Oracle.Backend.Model.ChucVu;
 import Oracle.Backend.Model.PhieuDKTheDocGia;
+import Oracle.Backend.Model.TinhTrangSach;
 import Oracle.Backend.Service.ChucVuService;
 import Oracle.Backend.Service.PhieuDKTheDocGiaService;
 import lombok.RequiredArgsConstructor;
@@ -32,13 +33,18 @@ public class PhieuDKTheDocGiaController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/phieudkthedocgia/create")
+    public ResponseEntity<PhieuDKTheDocGia> create(@RequestBody PhieuDKTheDocGia phieu) {
+        service.save(phieu);
+        return ResponseEntity.ok(phieu);
+    }
     @PutMapping("/phieudkthedocgia/{id}")
     public ResponseEntity<PhieuDKTheDocGia> update(@PathVariable int id, @RequestBody PhieuDKTheDocGia phieu) {
         service.save(phieu);
         return ResponseEntity.ok(phieu);
     }
     @DeleteMapping("/phieudkthedocgia/{id}")
-    public ResponseEntity<PhieuDKTheDocGia> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

@@ -1,6 +1,7 @@
 package Oracle.Backend.Controller.Admin;
 
 import Oracle.Backend.Model.ChucVu;
+import Oracle.Backend.Model.SachDienTu;
 import Oracle.Backend.Model.TacGia;
 import Oracle.Backend.Service.ChucVuService;
 import Oracle.Backend.Service.TacGiaService;
@@ -32,13 +33,18 @@ public class TacGiaController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/tacgia/create")
+    public ResponseEntity<TacGia> create(@RequestBody TacGia tg) {
+        service.save(tg);
+        return ResponseEntity.ok(tg);
+    }
     @PutMapping("/tacgia/{id}")
     public ResponseEntity<TacGia> update(@PathVariable int id, @RequestBody TacGia tg) {
         service.save(tg);
         return ResponseEntity.ok(tg);
     }
     @DeleteMapping("/tacgia/{id}")
-    public ResponseEntity<TacGia> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

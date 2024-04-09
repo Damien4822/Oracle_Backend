@@ -2,6 +2,7 @@ package Oracle.Backend.Controller.Admin;
 
 import Oracle.Backend.Model.ChucVu;
 import Oracle.Backend.Model.NhaXuatBan;
+import Oracle.Backend.Model.NhanVien;
 import Oracle.Backend.Service.ChucVuService;
 import Oracle.Backend.Service.NhaXuatBanService;
 import Oracle.Backend.Service.NhanVienService;
@@ -33,13 +34,18 @@ public class NhaXuatBanController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/nxb/create")
+    public ResponseEntity<NhaXuatBan> create(@RequestBody NhaXuatBan nxb) {
+        service.save(nxb);
+        return ResponseEntity.ok(nxb  );
+    }
     @PutMapping("/nxb/{id}")
     public ResponseEntity<NhaXuatBan> update(@PathVariable int id, @RequestBody NhaXuatBan nxb) {
         service.save(nxb);
         return ResponseEntity.ok(nxb);
     }
     @DeleteMapping("/nxb/{id}")
-    public ResponseEntity<NhaXuatBan> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

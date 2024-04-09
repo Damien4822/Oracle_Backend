@@ -32,13 +32,18 @@ public class TaiKhoanController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/taikhoan/create")
+    public ResponseEntity<TaiKhoan> create(@RequestBody TaiKhoan tk) {
+        service.save(tk);
+        return ResponseEntity.ok(tk);
+    }
     @PutMapping("/taikhoan/{id}")
     public ResponseEntity<TaiKhoan> update(@PathVariable int id, @RequestBody TaiKhoan tk) {
         service.save(tk);
         return ResponseEntity.ok(tk);
     }
     @DeleteMapping("/taikhoan/{id}")
-    public ResponseEntity<TaiKhoan> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

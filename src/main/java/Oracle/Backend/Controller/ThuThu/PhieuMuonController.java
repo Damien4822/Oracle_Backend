@@ -2,6 +2,7 @@ package Oracle.Backend.Controller.ThuThu;
 
 import Oracle.Backend.Model.ChiTietPhieuMuon;
 import Oracle.Backend.Model.ChucVu;
+import Oracle.Backend.Model.PhieuDKTheDocGia;
 import Oracle.Backend.Model.PhieuMuon;
 import Oracle.Backend.Service.ChiTietPhieuMuonService;
 import Oracle.Backend.Service.ChucVuService;
@@ -36,13 +37,19 @@ public class PhieuMuonController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/phieumuon/create")
+    public ResponseEntity<PhieuMuon> create(@RequestBody PhieuMuon phieu) {
+        service.save(phieu);
+        return ResponseEntity.ok(phieu);
+    }
     @PutMapping("/phieumuon/{id}")
     public ResponseEntity<PhieuMuon> update(@PathVariable int id, @RequestBody PhieuMuon pm) {
         service.save(pm);
         return ResponseEntity.ok(pm);
     }
+
     @DeleteMapping("/phieumuon/{id}")
-    public ResponseEntity<PhieuMuon> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

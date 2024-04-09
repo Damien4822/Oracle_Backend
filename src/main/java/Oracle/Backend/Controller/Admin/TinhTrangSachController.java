@@ -2,6 +2,7 @@ package Oracle.Backend.Controller.Admin;
 
 import Oracle.Backend.Model.QuyenSach;
 import Oracle.Backend.Model.TacGia;
+import Oracle.Backend.Model.TaiKhoan;
 import Oracle.Backend.Model.TinhTrangSach;
 import Oracle.Backend.Service.QuyenSachService;
 import Oracle.Backend.Service.TacGiaService;
@@ -41,8 +42,13 @@ public class TinhTrangSachController {
         service.save(tts);
         return ResponseEntity.ok(tts);
     }
+    @PostMapping("/tinhtrangsach/create")
+    public ResponseEntity<TinhTrangSach> create(@RequestBody TinhTrangSach tts) {
+        service.save(tts);
+        return ResponseEntity.ok(tts);
+    }
     @DeleteMapping("/tinhtrangsach/{id}")
-    public ResponseEntity<TinhTrangSach> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         //xoa ma tinh trang
         service.delete(id);
         //cap nhat ma tinh trang cua cac quyen sach ==null

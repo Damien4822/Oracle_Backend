@@ -1,5 +1,6 @@
 package Oracle.Backend.Controller.Admin;
 
+import Oracle.Backend.Model.DichGia;
 import Oracle.Backend.Model.DocGia;
 import Oracle.Backend.Model.NhanVien;
 import Oracle.Backend.Repository.DocGiaRepository;
@@ -33,13 +34,18 @@ public class DocGiaController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/docgia/create")
+    public ResponseEntity<DocGia> create(@RequestBody DocGia dg) {
+        docGiaService.save(dg);
+        return ResponseEntity.ok(dg);
+    }
     @PutMapping("/docgia/{id}")
     public ResponseEntity<DocGia> update(@PathVariable int id, @RequestBody DocGia docGia) {
         docGiaService.save(docGia);
         return ResponseEntity.ok(docGia);
     }
     @DeleteMapping("/docgia/{id}")
-    public ResponseEntity<DocGia> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         docGiaService.delete(id);
         return ResponseEntity.accepted().build();
     }

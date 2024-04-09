@@ -32,13 +32,18 @@ public class DauSachController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/dausach/create")
+    public ResponseEntity<DauSach> create(@RequestBody DauSach sach) {
+        service.save(sach);
+        return ResponseEntity.ok(sach);
+    }
     @PutMapping("/dausach/{id}")
     public ResponseEntity<DauSach> update(@PathVariable int id, @RequestBody DauSach ds) {
         service.save(ds);
         return ResponseEntity.ok(ds);
     }
     @DeleteMapping("/dausach/{id}")
-    public ResponseEntity<DauSach> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

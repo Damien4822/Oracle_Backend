@@ -1,6 +1,7 @@
 package Oracle.Backend.Controller.Admin;
 
 import Oracle.Backend.Model.DauSach;
+import Oracle.Backend.Model.NhaXuatBan;
 import Oracle.Backend.Model.PhanLoaiDocGia;
 import Oracle.Backend.Service.DauSachService;
 import Oracle.Backend.Service.PhanLoaiDocGiaService;
@@ -32,13 +33,18 @@ public class PhanLoaiDocGiaController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/phanloaidocgia/create")
+    public ResponseEntity<PhanLoaiDocGia> create(@RequestBody PhanLoaiDocGia pl) {
+        service.save(pl);
+        return ResponseEntity.ok(pl);
+    }
     @PutMapping("/phanloaidocgia/{id}")
     public ResponseEntity<PhanLoaiDocGia> update(@PathVariable int id, @RequestBody PhanLoaiDocGia pl) {
         service.save(pl);
         return ResponseEntity.ok(pl);
     }
     @DeleteMapping("/phanloaidocgia/{id}")
-    public ResponseEntity<PhanLoaiDocGia> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

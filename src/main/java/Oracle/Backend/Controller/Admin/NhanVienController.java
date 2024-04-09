@@ -32,13 +32,18 @@ public class NhanVienController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/nhanvien/create")
+    public ResponseEntity<NhanVien> create(@RequestBody NhanVien nv) {
+        service.save(nv);
+        return ResponseEntity.ok(nv);
+    }
     @PutMapping("/nhanvien/{id}")
     public ResponseEntity<NhanVien> update(@PathVariable int id, @RequestBody NhanVien nv) {
         service.save(nv);
         return ResponseEntity.ok(nv);
     }
     @DeleteMapping("/nhanvien/{id}")
-    public ResponseEntity<NhanVien> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

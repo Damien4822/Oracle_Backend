@@ -36,6 +36,11 @@ public class TheDocGiaController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/thedocgia/create")
+    public ResponseEntity<TheDocGia> create(@RequestBody TheDocGia phieu) {
+        service.save(phieu);
+        return ResponseEntity.ok(phieu);
+    }
     @PutMapping("/thedocgia/{id}")
     public ResponseEntity<TheDocGia> update(@PathVariable int id, @RequestBody TheDocGia tdg) {
         service.save(tdg);

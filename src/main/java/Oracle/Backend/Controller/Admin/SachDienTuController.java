@@ -1,5 +1,6 @@
 package Oracle.Backend.Controller.Admin;
 
+import Oracle.Backend.Model.PhanLoaiDocGia;
 import Oracle.Backend.Model.SachDienTu;
 import Oracle.Backend.Service.SachDienTuService;
 import lombok.RequiredArgsConstructor;
@@ -30,13 +31,18 @@ public class SachDienTuController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/sachdientu/create")
+    public ResponseEntity<SachDienTu> create(@RequestBody SachDienTu sdt) {
+        service.save(sdt);
+        return ResponseEntity.ok(sdt);
+    }
     @PutMapping("/sachdientu/{id}")
     public ResponseEntity<SachDienTu> update(@PathVariable int id, @RequestBody SachDienTu sdt) {
         service.save(sdt);
         return ResponseEntity.ok(sdt);
     }
     @DeleteMapping("/sachdientu/{id}")
-    public ResponseEntity<SachDienTu> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

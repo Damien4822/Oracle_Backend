@@ -38,13 +38,18 @@ public class PhieuPhatController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/phieuphat/create")
+    public ResponseEntity<PhieuPhat> create(@RequestBody PhieuPhat phieu) {
+        service.save(phieu);
+        return ResponseEntity.ok(phieu);
+    }
     @PutMapping("/phieuphat/{id}")
     public ResponseEntity< PhieuPhat> update(@PathVariable int id, @RequestBody  PhieuPhat pp) {
         service.save(pp);
         return ResponseEntity.ok(pp);
     }
     @DeleteMapping("/phieuphat/{id}")
-    public ResponseEntity< PhieuPhat> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }

@@ -1,5 +1,6 @@
 package Oracle.Backend.Controller.Admin;
 
+import Oracle.Backend.Model.DauSach;
 import Oracle.Backend.Model.DichGia;
 import Oracle.Backend.Model.TacGia;
 import Oracle.Backend.Service.DichGiaService;
@@ -32,13 +33,18 @@ public class DichGiaController {
         else
             return ResponseEntity.notFound().build();
     }
+    @PostMapping("/dichgia/create")
+    public ResponseEntity<DichGia> create(@RequestBody DichGia dg) {
+        service.save(dg);
+        return ResponseEntity.ok(dg);
+    }
     @PutMapping("/dichgia/{id}")
     public ResponseEntity<DichGia> update(@PathVariable int id, @RequestBody DichGia dg) {
         service.save(dg);
         return ResponseEntity.ok(dg);
     }
     @DeleteMapping("/dichgia/{id}")
-    public ResponseEntity<DichGia> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         service.delete(id);
         return ResponseEntity.accepted().build();
     }
