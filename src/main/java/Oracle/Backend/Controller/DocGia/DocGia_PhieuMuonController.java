@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/docgia")
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
-public class PhieuMuonController {
+public class DocGia_PhieuMuonController {
     @Autowired
     private PhieuMuonService service;
     @Autowired

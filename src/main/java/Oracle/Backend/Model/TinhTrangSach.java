@@ -16,5 +16,5 @@ public class TinhTrangSach {
     @Column(name = "MaTinhTrang")
     private int id;
     @Column(columnDefinition = "nvarchar2(40)")
-    private String MoTa;
+    private String moTa;
 }

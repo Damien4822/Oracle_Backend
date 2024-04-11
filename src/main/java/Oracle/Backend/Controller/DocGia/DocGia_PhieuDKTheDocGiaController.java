@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/docgia")
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
-public class PhieuDKTheDocGiaController {
+public class DocGia_PhieuDKTheDocGiaController {
     @Autowired
     private PhieuDKTheDocGiaService service;
     @GetMapping("/phieudkthedocgia/index")

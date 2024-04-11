@@ -54,10 +54,10 @@ public class PhieuPhatController {
         return ResponseEntity.accepted().build();
     }
 
-    @GetMapping("/phieuphat/{id}/ctphieuphat/index")
+   @GetMapping("/phieuphat/{id}/ctphieuphat/index")
     public ResponseEntity<List<ChiTietPhieuPhat>> getAll(@PathVariable int id)
     {
-        List<ChiTietPhieuPhat> chiTietPhieuPhats = CTservice.getAllByMaPhieuPhat(id);
+     List<ChiTietPhieuPhat> chiTietPhieuPhats = CTservice.getAllByMaPhieuPhat(id);
         return ResponseEntity.ok(chiTietPhieuPhats);
-    }
+   }
 }

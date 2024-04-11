@@ -18,8 +18,8 @@ import java.sql.Date;
 public class PhieuDKTheDocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int MaPhieuDK;
-    private DATE NgayLap;
+    private int maPhieuDK;
+    private DATE ngayLap;
     @Nullable
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaNV",nullable = false)

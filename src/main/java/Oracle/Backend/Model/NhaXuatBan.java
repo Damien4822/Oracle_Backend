@@ -16,11 +16,11 @@ public class NhaXuatBan {
     @Column(name = "MaNXB")
     private int id;
     @Column(columnDefinition = "nvarchar2(40)")
-    private String TenNXB;
+    private String tenNXB;
     @Column(columnDefinition = "nvarchar2(60)")
-    private String DiaChi;
+    private String diaChi;
     @Column(columnDefinition = "nvarchar2(14)")
-    private String SDT;
+    private String sdt;
     @Column(columnDefinition = "nvarchar2(50)")
-    private String Email;
+    private String email;
 }

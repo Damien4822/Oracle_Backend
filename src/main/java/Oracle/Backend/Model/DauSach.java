@@ -19,9 +19,9 @@ public class DauSach {
     @Column(name = "MaDauSach")
     private int id;
     @Column(columnDefinition = "nvarchar2(100)")
-    private String TenDauSach;
+    private String tenDauSach;
     @Column(columnDefinition = "number (4,0)")
-    private int NamXuatBan;
+    private int namXuatBan;
     @ManyToMany(mappedBy = "dauSachList")
     @JsonIgnore
     private List<TacGia> tacGiaList;

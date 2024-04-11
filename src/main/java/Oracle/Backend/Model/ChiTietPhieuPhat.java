@@ -16,7 +16,7 @@ public class ChiTietPhieuPhat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MaCTPP")
     private int id;
-    private int ThanhTien;
+    private int thanhTien;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaTinhTrang",nullable = false)
     @JsonIgnore

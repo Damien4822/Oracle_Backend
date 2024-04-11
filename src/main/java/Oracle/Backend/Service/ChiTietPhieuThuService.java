@@ -27,8 +27,8 @@ public class ChiTietPhieuThuService {
     public void delete(Integer id){
         repo.deleteById(id);
     }
-    public List<ChiTietPhieuThu> getAllByMaPhieuThu(int mapt)
-    {
-        return repo.findAllByMaPhieuThu(mapt);
+  public List<ChiTietPhieuThu> getAllByMaPhieuThu(int mapt)
+ {
+ return repo.findAllByPhieuThuId(mapt);
     }
 }

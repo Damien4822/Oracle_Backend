@@ -19,7 +19,7 @@ public class QuyenSach {
     @Column(name = "MaQuyenSach")
     private int id;
     @Column(columnDefinition = "number(4,0)")
-    private int NamTaiBan;
+    private int namTaiBan;
     @Column(columnDefinition = "integer")
     private int gia;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -47,11 +47,11 @@ public class QuyenSach {
     }
 
     public int getNamTaiBan() {
-        return NamTaiBan;
+        return namTaiBan;
     }
 
     public void setNamTaiBan(int namTaiBan) {
-        NamTaiBan = namTaiBan;
+        this.namTaiBan = namTaiBan;
     }
 
     public int getGia() {

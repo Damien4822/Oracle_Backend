@@ -20,11 +20,11 @@ public class TacGia {
     @Column(name = "MaTacGia")
     private int id;
     @Column(columnDefinition = "nvarchar2(40)")
-   private String TenTacGia;
+   private String tenTacGia;
     @Column(columnDefinition = "number(4,0)")
-    private int NamSinh;
+    private int namSinh;
     @Column(columnDefinition = "number(4,0)")
-    private int NamMat;
+    private int namMat;
     @ManyToMany
     @JoinTable(
             name = "DauSach_tacGiaList",

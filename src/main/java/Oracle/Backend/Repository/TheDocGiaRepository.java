@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface TheDocGiaRepository extends JpaRepository<TheDocGia,Integer> {
-    List<TheDocGia> findAllByDocGia(int id);
+   List<TheDocGia> findAllByDocGiaId(int id);
 }

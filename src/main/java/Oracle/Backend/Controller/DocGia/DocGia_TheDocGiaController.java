@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/docgia")
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
-public class TheDocGiaController {
+public class DocGia_TheDocGiaController {
     @Autowired
     private TheDocGiaService service;
 

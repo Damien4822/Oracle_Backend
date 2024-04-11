@@ -21,22 +21,22 @@ public class DocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MaDocGia",  nullable = false)
-    private int maDocGia;
+    private int id;
     @Column(name = "TenDocGia", columnDefinition = "nvarchar2(40)", nullable = false,length = 40)
     private String tenDocGia;
     @Column(name = "NgaySinh", columnDefinition = "Date", nullable = false)
-    private Date NgaySinh;
+    private Date ngaySinh;
     @Column(name = "Email", columnDefinition = "nvarchar2(40)", nullable = false,length = 40)
     private String email;
 
     @Lob
     @Nullable
-    private Blob Avatar;
+    private Blob avatar;
     @Column(name = "SDT", columnDefinition = "nvarchar2(11)", nullable = false,length = 11)
     private String SDT;
     @Lob
     @Nullable
-    private Blob HinhAnhMinhChung;
+    private Blob hinhAnhMinhChung;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "MaPLDG",nullable = false)
     @JsonIgnore
@@ -46,12 +46,28 @@ public class DocGia {
     @JoinColumn(name = "MaTaiKhoan",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;
 
-    public int getMaDocGia() {
-        return maDocGia;
+    public int getId() {
+        return id;
     }
 
-    public void setMaDocGia(int maDocGia) {
-        this.maDocGia = maDocGia;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSDT() {
+        return SDT;
+    }
+
+    public void setSDT(String SDT) {
+        this.SDT = SDT;
     }
 
     public String getTenDocGia() {
@@ -62,13 +78,7 @@ public class DocGia {
         this.tenDocGia = tenDocGia;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public PhanLoaiDocGia getPhanloai() {
         return phanloai;
@@ -88,39 +98,36 @@ public class DocGia {
     }
 
     public Date getNgaySinh() {
-        return NgaySinh;
+        return ngaySinh;
     }
 
     public void setNgaySinh(Date ngaySinh) {
-        NgaySinh = ngaySinh;
+        this.ngaySinh = ngaySinh;
     }
 
-
-
+    @Nullable
     public Blob getAvatar() {
-        return Avatar;
+        return avatar;
     }
 
-    public void setAvatar(Blob avatar) {
-        Avatar = avatar;
+    public void setAvatar(@Nullable Blob avatar) {
+        this.avatar = avatar;
     }
 
-    public String getSDT() {
+    public String getSdt() {
         return SDT;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSdt(String sdt) {
+        this.SDT = sdt;
     }
 
     @Nullable
     public Blob getHinhAnhMinhChung() {
-        return HinhAnhMinhChung;
+        return hinhAnhMinhChung;
     }
 
     public void setHinhAnhMinhChung(@Nullable Blob hinhAnhMinhChung) {
-        HinhAnhMinhChung = hinhAnhMinhChung;
+        this.hinhAnhMinhChung = hinhAnhMinhChung;
     }
-
-
 }

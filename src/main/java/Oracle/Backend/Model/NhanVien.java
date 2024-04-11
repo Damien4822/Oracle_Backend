@@ -20,16 +20,16 @@ public class NhanVien {
     @Column(name = "MaNV",nullable = false,unique = true)
     private int id;
     @Column(name = "TenNV",columnDefinition = "nvarchar2(40)")
-    private String TenNV;
+    private String tenNV;
     private DATE NgaySinh;
     @Column(name="Email",columnDefinition = "nvarchar2(50)",unique = true)
-    private String Email;
+    private String email;
     @Column(name="SDT",columnDefinition = "nvarchar2(14)",unique = true)
-    private String SDT;
+    private String sdt;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaChucVu",nullable = false)
     @JsonIgnore
-    private ChucVu chucvu;
+    private ChucVu chucVu;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaTK",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;

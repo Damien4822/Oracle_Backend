@@ -21,10 +21,10 @@ public class PhieuThu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MaPhieuThu")
     private int id;
-    private DATE NgayLap;
+    private DATE ngayLap;
     @Column(columnDefinition = "integer")
-    private BigInteger SoTien;
-    private String NoiDung;
+    private BigInteger soTien;
+    private String noiDung;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaDocGia",nullable = false)
     @JsonIgnore

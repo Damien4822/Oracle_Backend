@@ -49,7 +49,7 @@ public class TinhTrangSachController {
     }
     @DeleteMapping("/tinhtrangsach/{id}")
     public ResponseEntity<?> delete(@PathVariable int id) {
-        //xoa ma tinh trang
+
         service.delete(id);
         //cap nhat ma tinh trang cua cac quyen sach ==null
         List<QuyenSach> update = qsService.getAllByMaTinhTrang(id);

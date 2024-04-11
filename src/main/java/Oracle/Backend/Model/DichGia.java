@@ -20,13 +20,13 @@ public class DichGia {
     @Column(name = "MaDichGia")
     private int id;
     @Column(columnDefinition = "nvarchar2(40)")
-    private String TenDichGia;
+    private String tenDichGia;
     @Nullable
     @Column(columnDefinition = "number(4,0)")
-    private int NamSinh;
+    private int namSinh;
     @Nullable
     @Column(columnDefinition = "number(4,0)")
-    private Date NamMat;
+    private Date namMat;
     @ManyToMany
     @JoinTable(
             name = "QuyenSach_dichGiaList",

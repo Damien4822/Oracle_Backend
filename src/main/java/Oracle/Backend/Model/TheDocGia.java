@@ -17,14 +17,14 @@ import java.sql.Date;
 public class TheDocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int MaTheDocGia;
-    private DATE NgayLap;
-    private DATE NgayHetHan;
-    private byte tinhtrang;
+    private int maTheDocGia;
+    private DATE ngayLap;
+    private DATE ngayHetHan;
+    private byte tinhTrang;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "MaDocGia",nullable = false)
     @JsonIgnore
-    private DocGia docgia;
+    private DocGia docGia;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaPhieuDK",referencedColumnName = "MaPhieuDK")
     private PhieuDKTheDocGia phieuDK;

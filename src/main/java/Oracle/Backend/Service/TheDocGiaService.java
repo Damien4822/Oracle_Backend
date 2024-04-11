@@ -30,9 +30,9 @@ public class TheDocGiaService {
     public void delete(Integer id){
         repo.deleteById(id);
     }
-    public List<TheDocGia> getAllByMaDocGia(Integer madocgia)
-    {
+   public List<TheDocGia> getAllByMaDocGia(Integer madocgia)
+   {
 
-        return repo.findAllByDocGia(madocgia);
-    }
+      return repo.findAllByDocGiaId(madocgia);
+   }
 }

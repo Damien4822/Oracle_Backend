@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ChiTietPhieuThuRepository extends JpaRepository<ChiTietPhieuThu,Integer> {
-    List<ChiTietPhieuThu> findAllByMaPhieuThu(Integer mapt);
+    List<ChiTietPhieuThu> findAllByPhieuThuId(int mapt);
 }

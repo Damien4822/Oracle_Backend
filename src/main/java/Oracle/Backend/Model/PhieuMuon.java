@@ -19,11 +19,11 @@ public class PhieuMuon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="MaPhieuMuon" )
     private int id;
-    private Date NgayLap;
-    private Date NgayMuon;
-    private Date NgayTra;
+    private Date ngayLap;
+    private Date ngayMuon;
+    private Date ngayTra;
     @Column(columnDefinition = "integer")
-    private int TongTien;
+    private int tongTien;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaDocGia",nullable = false)
     @JsonIgnore

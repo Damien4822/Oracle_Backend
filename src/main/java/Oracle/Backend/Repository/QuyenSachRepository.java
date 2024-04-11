@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface QuyenSachRepository extends JpaRepository<QuyenSach,Integer> {
-    List<QuyenSach> findAllByTinhTrangSach(Integer matinhtrang);
+    List<QuyenSach> findAllByTinhTrangSachId(int id);
 }

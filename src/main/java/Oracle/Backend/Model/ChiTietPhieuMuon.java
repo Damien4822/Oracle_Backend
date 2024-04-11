@@ -17,9 +17,9 @@ public class ChiTietPhieuMuon {
     @Column(name = "MaChiTietPhieuMuon")
     private int id;
     @Column(columnDefinition = "integer")
-    private int ThanhTien;
+    private int thanhTien;
     @Column(columnDefinition = "number(2,0)")
-    private int SoLuong;
+    private int soLuong;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaPhieuMuon",nullable = false)
     @JsonIgnore
@@ -30,8 +30,8 @@ public class ChiTietPhieuMuon {
 
     public ChiTietPhieuMuon(ChiTietPhieuMuon ct) {
         this.id = ct.id;
-        ThanhTien = ct.ThanhTien;
-        SoLuong = ct.SoLuong;
+        thanhTien = ct.thanhTien;
+        soLuong = ct.soLuong;
         this.phieuMuon = ct.phieuMuon;
         this.quyenSach = ct.quyenSach;
     }

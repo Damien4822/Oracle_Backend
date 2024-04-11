@@ -15,34 +15,34 @@ import lombok.NoArgsConstructor;
 public class PhanLoaiDocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MaPhanLoaiDocGia",  nullable = false)
-    private int MaPhanLoaiDocGia;
+    @Column(name = "MaPhanLoaiDocGia", nullable = false)
+    private int maPhanLoaiDocGia;
     @Column(name = "TenPhanLoai", columnDefinition = "nvarchar2(30)")
-    private String TenPL;
-    @Column(name = "MoTa",  columnDefinition = "nvarchar2(40)")
-    private String MoTa;
+    private String tenPL;
+    @Column(name = "MoTa", columnDefinition = "nvarchar2(40)")
+    private String moTa;
 
     public int getMaPhanLoaiDocGia() {
-        return MaPhanLoaiDocGia;
+        return maPhanLoaiDocGia;
     }
 
     public void setMaPhanLoaiDocGia(int maPhanLoaiDocGia) {
-        MaPhanLoaiDocGia = maPhanLoaiDocGia;
+        this.maPhanLoaiDocGia = maPhanLoaiDocGia;
     }
 
     public String getTenPL() {
-        return TenPL;
+        return tenPL;
     }
 
     public void setTenPL(String tenPL) {
-        TenPL = tenPL;
+        this.tenPL = tenPL;
     }
 
     public String getMoTa() {
-        return MoTa;
+        return moTa;
     }
 
     public void setMoTa(String moTa) {
-        MoTa = moTa;
+        this.moTa = moTa;
     }
 }

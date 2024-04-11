@@ -30,6 +30,6 @@ public class ChiTietPhieuMuonService {
     }
     public List<ChiTietPhieuMuon> getAllByMaPhieuMuon(int maphieumuon)
     {
-        return repo.findAllByMaPhieuMuon(maphieumuon);
-    }
+        return repo.findAllByPhieuMuonId(maphieumuon);
+   }
 }
