@@ -17,7 +17,7 @@ public class NhaXuatBan {
     private int id;
     @Column(columnDefinition = "nvarchar2(40)")
     private String tenNXB;
-    @Column(columnDefinition = "nvarchar2(60)")
+    @Column(columnDefinition = "nvarchar2(300)")
     private String diaChi;
     @Column(columnDefinition = "nvarchar2(14)")
     private String sdt;

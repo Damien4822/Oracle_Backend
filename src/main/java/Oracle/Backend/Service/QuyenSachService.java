@@ -34,4 +34,8 @@ public class QuyenSachService {
     {
         return repo.findAllByTinhTrangSachId(matinhtrang);
     }
+    public List<QuyenSach> getAllByMaDauSach(int mads)
+    {
+        return repo.findAllByDauSachId(mads);
+    }
 }

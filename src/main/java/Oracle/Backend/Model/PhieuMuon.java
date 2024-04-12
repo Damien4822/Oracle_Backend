@@ -33,7 +33,7 @@ public class PhieuMuon {
     @JoinColumn(name="MaNV",nullable = false)
     @JsonIgnore
     private NhanVien nhanVien;
-
+    private Boolean tinhTrangPhieu;
     @Nullable
     public NhanVien getNhanVien() {
         return nhanVien;

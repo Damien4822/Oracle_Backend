@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface QuyenSachRepository extends JpaRepository<QuyenSach,Integer> {
     List<QuyenSach> findAllByTinhTrangSachId(int id);
+    List<QuyenSach> findAllByDauSachId(int id);
 }
