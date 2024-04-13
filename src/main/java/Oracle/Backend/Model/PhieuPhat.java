@@ -33,4 +33,52 @@ public class PhieuPhat {
     @JoinColumn(name="MaNV",nullable = false)
     @JsonIgnore
     private NhanVien nhanVien;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getNgayLap() {
+        return ngayLap;
+    }
+
+    public void setNgayLap(Date ngayLap) {
+        this.ngayLap = ngayLap;
+    }
+
+    public int getSoTienPhat() {
+        return soTienPhat;
+    }
+
+    public void setSoTienPhat(int soTienPhat) {
+        this.soTienPhat = soTienPhat;
+    }
+
+    public String getNoiDung() {
+        return noiDung;
+    }
+
+    public void setNoiDung(String noiDung) {
+        this.noiDung = noiDung;
+    }
+
+    public DocGia getDocGia() {
+        return docGia;
+    }
+
+    public void setDocGia(DocGia docGia) {
+        this.docGia = docGia;
+    }
+
+    public NhanVien getNhanVien() {
+        return nhanVien;
+    }
+
+    public void setNhanVien(NhanVien nhanVien) {
+        this.nhanVien = nhanVien;
+    }
 }

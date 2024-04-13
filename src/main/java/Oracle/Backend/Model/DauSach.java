@@ -25,4 +25,36 @@ public class DauSach {
     @ManyToMany(mappedBy = "dauSachList")
     @JsonIgnore
     private List<TacGia> tacGiaList;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTenDauSach() {
+        return tenDauSach;
+    }
+
+    public void setTenDauSach(String tenDauSach) {
+        this.tenDauSach = tenDauSach;
+    }
+
+    public int getNamXuatBan() {
+        return namXuatBan;
+    }
+
+    public void setNamXuatBan(int namXuatBan) {
+        this.namXuatBan = namXuatBan;
+    }
+
+    public List<TacGia> getTacGiaList() {
+        return tacGiaList;
+    }
+
+    public void setTacGiaList(List<TacGia> tacGiaList) {
+        this.tacGiaList = tacGiaList;
+    }
 }

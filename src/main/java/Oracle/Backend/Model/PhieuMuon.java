@@ -38,8 +38,63 @@ public class PhieuMuon {
     public NhanVien getNhanVien() {
         return nhanVien;
     }
-
     public void setNhanVien(@Nullable NhanVien nhanVien) {
         this.nhanVien = nhanVien;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getNgayLap() {
+        return ngayLap;
+    }
+
+    public void setNgayLap(Date ngayLap) {
+        this.ngayLap = ngayLap;
+    }
+
+    public Date getNgayMuon() {
+        return ngayMuon;
+    }
+
+    public void setNgayMuon(Date ngayMuon) {
+        this.ngayMuon = ngayMuon;
+    }
+
+    public Date getNgayTra() {
+        return ngayTra;
+    }
+
+    public void setNgayTra(Date ngayTra) {
+        this.ngayTra = ngayTra;
+    }
+
+    public int getTongTien() {
+        return tongTien;
+    }
+
+    public void setTongTien(int tongTien) {
+        this.tongTien = tongTien;
+    }
+
+    public DocGia getDocGia() {
+        return docGia;
+    }
+
+    public void setDocGia(DocGia docGia) {
+        this.docGia = docGia;
+    }
+
+    public Boolean getTinhTrangPhieu() {
+        return tinhTrangPhieu;
+    }
+
+    public void setTinhTrangPhieu(Boolean tinhTrangPhieu) {
+        this.tinhTrangPhieu = tinhTrangPhieu;
     }
 }

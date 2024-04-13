@@ -33,4 +33,47 @@ public class ChiTietPhieuThu {
     @JoinColumn(name="MaPhieuThu",nullable = false)
     @JsonIgnore
     private PhieuThu phieuThu;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Nullable
+    public PhieuDKTheDocGia getPhieuDKTheDocGia() {
+        return phieuDKTheDocGia;
+    }
+
+    public void setPhieuDKTheDocGia(@Nullable PhieuDKTheDocGia phieuDKTheDocGia) {
+        this.phieuDKTheDocGia = phieuDKTheDocGia;
+    }
+
+    @Nullable
+    public PhieuMuon getPhieuMuon() {
+        return phieuMuon;
+    }
+
+    public void setPhieuMuon(@Nullable PhieuMuon phieuMuon) {
+        this.phieuMuon = phieuMuon;
+    }
+
+    @Nullable
+    public PhieuPhat getPhieuPhat() {
+        return phieuPhat;
+    }
+
+    public void setPhieuPhat(@Nullable PhieuPhat phieuPhat) {
+        this.phieuPhat = phieuPhat;
+    }
+
+    public PhieuThu getPhieuThu() {
+        return phieuThu;
+    }
+
+    public void setPhieuThu(PhieuThu phieuThu) {
+        this.phieuThu = phieuThu;
+    }
 }

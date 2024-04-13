@@ -28,11 +28,43 @@ public class ChiTietPhieuMuon {
     @JoinColumn(name = "MaQuyenSach", referencedColumnName = "MaQuyenSach")
     private QuyenSach quyenSach;
 
-    public ChiTietPhieuMuon(ChiTietPhieuMuon ct) {
-        this.id = ct.id;
-        thanhTien = ct.thanhTien;
-        soLuong = ct.soLuong;
-        this.phieuMuon = ct.phieuMuon;
-        this.quyenSach = ct.quyenSach;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getThanhTien() {
+        return thanhTien;
+    }
+
+    public void setThanhTien(int thanhTien) {
+        this.thanhTien = thanhTien;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    public PhieuMuon getPhieuMuon() {
+        return phieuMuon;
+    }
+
+    public void setPhieuMuon(PhieuMuon phieuMuon) {
+        this.phieuMuon = phieuMuon;
+    }
+
+    public QuyenSach getQuyenSach() {
+        return quyenSach;
+    }
+
+    public void setQuyenSach(QuyenSach quyenSach) {
+        this.quyenSach = quyenSach;
     }
 }

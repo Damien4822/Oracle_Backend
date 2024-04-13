@@ -33,4 +33,45 @@ public class DichGia {
             joinColumns = @JoinColumn(name = "DichGia_MaDichGia"),
             inverseJoinColumns = @JoinColumn(name = "QuyenSach_MaQuyenSach"))
     private List<QuyenSach> quyenSachList;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTenDichGia() {
+        return tenDichGia;
+    }
+
+    public void setTenDichGia(String tenDichGia) {
+        this.tenDichGia = tenDichGia;
+    }
+
+    public int getNamSinh() {
+        return namSinh;
+    }
+
+    public void setNamSinh(int namSinh) {
+        this.namSinh = namSinh;
+    }
+
+    @Nullable
+    public Date getNamMat() {
+        return namMat;
+    }
+
+    public void setNamMat(@Nullable Date namMat) {
+        this.namMat = namMat;
+    }
+
+    public List<QuyenSach> getQuyenSachList() {
+        return quyenSachList;
+    }
+
+    public void setQuyenSachList(List<QuyenSach> quyenSachList) {
+        this.quyenSachList = quyenSachList;
+    }
 }

@@ -37,7 +37,7 @@ public class Public_DauSachController {
     @GetMapping("/dausach/{id}/quyensach/index")
     public ResponseEntity<List<QuyenSach>> getAll(@PathVariable int id)
     {
-        List<QuyenSach> list = QSservice.getAllByMaTinhTrang(id);
+        List<QuyenSach> list = QSservice.getAllByMaDauSach(id);
         if(list!=null)
         return ResponseEntity.ok(list);
         else return ResponseEntity.noContent().build();

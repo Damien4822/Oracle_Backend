@@ -28,4 +28,44 @@ public class ChiTietPhieuPhat {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaQuyenSach", referencedColumnName = "MaQuyenSach")
     private QuyenSach quyenSach;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getThanhTien() {
+        return thanhTien;
+    }
+
+    public void setThanhTien(int thanhTien) {
+        this.thanhTien = thanhTien;
+    }
+
+    public TinhTrangSach getTinhTrangSach() {
+        return tinhTrangSach;
+    }
+
+    public void setTinhTrangSach(TinhTrangSach tinhTrangSach) {
+        this.tinhTrangSach = tinhTrangSach;
+    }
+
+    public PhieuPhat getPhieuPhat() {
+        return phieuPhat;
+    }
+
+    public void setPhieuPhat(PhieuPhat phieuPhat) {
+        this.phieuPhat = phieuPhat;
+    }
+
+    public QuyenSach getQuyenSach() {
+        return quyenSach;
+    }
+
+    public void setQuyenSach(QuyenSach quyenSach) {
+        this.quyenSach = quyenSach;
+    }
 }

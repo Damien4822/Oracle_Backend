@@ -22,18 +22,18 @@ public class QuyenSach {
     private int namTaiBan;
     @Column(columnDefinition = "integer")
     private int gia;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "MaDauSach",nullable = false)
     @JsonIgnore
     private DauSach dauSach;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "MaNXB",nullable = false)
     @JsonIgnore
     private NhaXuatBan nhaXuatBan;
     @ManyToMany(mappedBy = "quyenSachList")
     @JsonIgnore
     private List<DichGia> dichGiaList;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="MaTinhTrang",nullable = false)
     @JsonIgnore
     private TinhTrangSach tinhTrangSach;

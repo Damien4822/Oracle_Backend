@@ -31,4 +31,44 @@ public class TacGia {
             joinColumns = @JoinColumn(name = "TacGia_MaTacGia"),
             inverseJoinColumns = @JoinColumn(name = "DauSach_MaDauSach"))
     private List<DauSach> dauSachList;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTenTacGia() {
+        return tenTacGia;
+    }
+
+    public void setTenTacGia(String tenTacGia) {
+        this.tenTacGia = tenTacGia;
+    }
+
+    public int getNamSinh() {
+        return namSinh;
+    }
+
+    public void setNamSinh(int namSinh) {
+        this.namSinh = namSinh;
+    }
+
+    public int getNamMat() {
+        return namMat;
+    }
+
+    public void setNamMat(int namMat) {
+        this.namMat = namMat;
+    }
+
+    public List<DauSach> getDauSachList() {
+        return dauSachList;
+    }
+
+    public void setDauSachList(List<DauSach> dauSachList) {
+        this.dauSachList = dauSachList;
+    }
 }

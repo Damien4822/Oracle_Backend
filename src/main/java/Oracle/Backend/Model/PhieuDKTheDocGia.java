@@ -29,4 +29,37 @@ public class PhieuDKTheDocGia {
     @JoinColumn(name="MaDocGia",nullable = false)
     @JsonIgnore
     private DocGia docGia;
+
+    public int getMaPhieuDK() {
+        return maPhieuDK;
+    }
+
+    public void setMaPhieuDK(int maPhieuDK) {
+        this.maPhieuDK = maPhieuDK;
+    }
+
+    public DATE getNgayLap() {
+        return ngayLap;
+    }
+
+    public void setNgayLap(DATE ngayLap) {
+        this.ngayLap = ngayLap;
+    }
+
+    @Nullable
+    public NhanVien getNhanVien() {
+        return nhanVien;
+    }
+
+    public void setNhanVien(@Nullable NhanVien nhanVien) {
+        this.nhanVien = nhanVien;
+    }
+
+    public DocGia getDocGia() {
+        return docGia;
+    }
+
+    public void setDocGia(DocGia docGia) {
+        this.docGia = docGia;
+    }
 }

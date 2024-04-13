@@ -38,4 +38,61 @@ public class PhieuThu {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaChiTietPhieuThu", referencedColumnName = "MaChiTietPhieuThu")
     private ChiTietPhieuThu chiTietPhieuThu;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public DATE getNgayLap() {
+        return ngayLap;
+    }
+
+    public void setNgayLap(DATE ngayLap) {
+        this.ngayLap = ngayLap;
+    }
+
+    public BigInteger getSoTien() {
+        return soTien;
+    }
+
+    public void setSoTien(BigInteger soTien) {
+        this.soTien = soTien;
+    }
+
+    public String getNoiDung() {
+        return noiDung;
+    }
+
+    public void setNoiDung(String noiDung) {
+        this.noiDung = noiDung;
+    }
+
+    public DocGia getDocGia() {
+        return docGia;
+    }
+
+    public void setDocGia(DocGia docGia) {
+        this.docGia = docGia;
+    }
+
+    public NhanVien getNhanVien() {
+        return nhanVien;
+    }
+
+    public void setNhanVien(NhanVien nhanVien) {
+        this.nhanVien = nhanVien;
+    }
+
+    @Nullable
+    public ChiTietPhieuThu getChiTietPhieuThu() {
+        return chiTietPhieuThu;
+    }
+
+    public void setChiTietPhieuThu(@Nullable ChiTietPhieuThu chiTietPhieuThu) {
+        this.chiTietPhieuThu = chiTietPhieuThu;
+    }
 }

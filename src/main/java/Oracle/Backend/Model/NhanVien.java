@@ -33,4 +33,60 @@ public class NhanVien {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaTK",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTenNV() {
+        return tenNV;
+    }
+
+    public void setTenNV(String tenNV) {
+        this.tenNV = tenNV;
+    }
+
+    public DATE getNgaySinh() {
+        return NgaySinh;
+    }
+
+    public void setNgaySinh(DATE ngaySinh) {
+        NgaySinh = ngaySinh;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSdt() {
+        return sdt;
+    }
+
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
+    }
+
+    public ChucVu getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(ChucVu chucVu) {
+        this.chucVu = chucVu;
+    }
+
+    public TaiKhoan getTaiKhoan() {
+        return taiKhoan;
+    }
+
+    public void setTaiKhoan(TaiKhoan taiKhoan) {
+        this.taiKhoan = taiKhoan;
+    }
 }

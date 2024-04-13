@@ -24,4 +24,28 @@ public class SachDienTu {
     @JoinColumn(name= "MaQuyenSach",nullable = false)
     @JsonIgnore
     private QuyenSach quyenSach;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Blob getNoiDung() {
+        return noiDung;
+    }
+
+    public void setNoiDung(Blob noiDung) {
+        this.noiDung = noiDung;
+    }
+
+    public QuyenSach getQuyenSach() {
+        return quyenSach;
+    }
+
+    public void setQuyenSach(QuyenSach quyenSach) {
+        this.quyenSach = quyenSach;
+    }
 }

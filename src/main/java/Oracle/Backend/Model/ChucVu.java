@@ -23,4 +23,27 @@ public class ChucVu {
     @Column(name = "MoTa",columnDefinition = "nvarchar2(40)",nullable = false)
     private String moTa;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTenChucVu() {
+        return tenChucVu;
+    }
+
+    public void setTenChucVu(String tenChucVu) {
+        this.tenChucVu = tenChucVu;
+    }
+
+    public String getMoTa() {
+        return moTa;
+    }
+
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
+    }
 }
