@@ -28,7 +28,7 @@ public class TacGia {
     private int namSinh;
     @Column(columnDefinition = "number(4,0)")
     private int namMat;
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "DauSach_tacGiaList",
             joinColumns = @JoinColumn(name = "TacGia_MaTacGia"),

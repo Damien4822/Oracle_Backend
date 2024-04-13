@@ -2,8 +2,10 @@ package Oracle.Backend.Controller.PublicController;
 
 import Oracle.Backend.Model.DauSach;
 import Oracle.Backend.Model.QuyenSach;
+import Oracle.Backend.Model.TacGia;
 import Oracle.Backend.Service.DauSachService;
 import Oracle.Backend.Service.QuyenSachService;
+import Oracle.Backend.Service.TacGiaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,8 @@ import java.util.List;
 public class Public_DauSachController {
     @Autowired
     private DauSachService service;
+    @Autowired
+    private TacGiaService tacGiaService;
     @Autowired
     private QuyenSachService QSservice;
     @GetMapping("/dausach/index")
@@ -41,5 +45,12 @@ public class Public_DauSachController {
         if(list!=null)
         return ResponseEntity.ok(list);
         else return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/dausach/{id}/tacgia/index")
+    public ResponseEntity<List<TacGia>> getAllTG(@PathVariable int id)
+    {
+        DauSach ds = service.getById(id);
+        List<TacGia> tg = ds.getTacGiaList();
+        return ResponseEntity.ok(tg);
     }
 }

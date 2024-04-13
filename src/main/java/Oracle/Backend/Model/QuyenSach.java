@@ -33,7 +33,7 @@ public class QuyenSach {
     @JoinColumn(name= "MaNXB",nullable = false)
 
     private NhaXuatBan nhaXuatBan;
-    @ManyToMany(mappedBy = "quyenSachList",fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "quyenSachList",fetch = FetchType.EAGER)
 
     private List<DichGia> dichGiaList;
     @ManyToOne(fetch = FetchType.EAGER)

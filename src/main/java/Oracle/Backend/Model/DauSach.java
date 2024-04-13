@@ -1,5 +1,6 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -26,7 +27,7 @@ public class DauSach {
     @Column(columnDefinition = "number (4,0)")
     private int namXuatBan;
     @ManyToMany(mappedBy = "dauSachList",fetch = FetchType.EAGER)
-    @JsonIgnore
+    @JsonBackReference
     private List<TacGia> tacGiaList;
 
     public int getId() {
