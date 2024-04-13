@@ -1,6 +1,8 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "QuyenSach")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property="id")
 public class QuyenSach {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,18 +27,17 @@ public class QuyenSach {
     private int gia;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "MaDauSach",nullable = false)
-    @JsonIgnore
+
     private DauSach dauSach;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "MaNXB",nullable = false)
-    @JsonIgnore
+
     private NhaXuatBan nhaXuatBan;
-    @ManyToMany(mappedBy = "quyenSachList")
-    @JsonIgnore
+    @ManyToMany(mappedBy = "quyenSachList",fetch = FetchType.LAZY)
+
     private List<DichGia> dichGiaList;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="MaTinhTrang",nullable = false)
-    @JsonIgnore
     private TinhTrangSach tinhTrangSach;
 
     public int getId() {

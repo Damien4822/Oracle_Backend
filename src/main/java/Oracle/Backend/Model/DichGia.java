@@ -1,5 +1,8 @@
 package Oracle.Backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "DichGia")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property="id")
 public class DichGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,15 +27,16 @@ public class DichGia {
     private String tenDichGia;
     @Nullable
     @Column(columnDefinition = "number(4,0)")
-    private int namSinh;
+    private Date namSinh;
     @Nullable
     @Column(columnDefinition = "number(4,0)")
     private Date namMat;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "QuyenSach_dichGiaList",
             joinColumns = @JoinColumn(name = "DichGia_MaDichGia"),
             inverseJoinColumns = @JoinColumn(name = "QuyenSach_MaQuyenSach"))
+
     private List<QuyenSach> quyenSachList;
 
     public int getId() {
@@ -50,11 +55,11 @@ public class DichGia {
         this.tenDichGia = tenDichGia;
     }
 
-    public int getNamSinh() {
+    public Date getNamSinh() {
         return namSinh;
     }
 
-    public void setNamSinh(int namSinh) {
+    public void setNamSinh(Date namSinh) {
         this.namSinh = namSinh;
     }
 
