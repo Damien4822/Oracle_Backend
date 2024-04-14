@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -26,13 +27,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+
                 .csrf(csrf-> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                                .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                                 .requestMatchers("/auth/**").permitAll()
-                                .requestMatchers("/admin/**").hasAuthority(String.valueOf(Role.THUTHU))
-                                .requestMatchers("/docgia/**").hasAuthority(String.valueOf(Role.DOCGIA))
-                                .requestMatchers("/thuthu/**").hasAnyAuthority(String.valueOf(Role.ADMIN),String.valueOf(Role.THUTHU))
+                                .requestMatchers("/admin/**").hasAuthority("THUTHU")
+                                .requestMatchers("/docgia/**").hasAuthority("DOCGIA")
+                                .requestMatchers("/thuthu/**").hasAnyAuthority("ADMIN","THUTHU")
                                 .requestMatchers("/public/**").permitAll()
+
+                                .anyRequest().authenticated()
                         //.hasAuthority("ADMIN")
                         //.requestMatchers("/users/**").hasAuthority("ADMIN")
                 )

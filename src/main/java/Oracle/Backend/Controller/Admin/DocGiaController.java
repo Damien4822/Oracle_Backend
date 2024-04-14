@@ -1,11 +1,7 @@
 package Oracle.Backend.Controller.Admin;
 
-import Oracle.Backend.Model.DichGia;
 import Oracle.Backend.Model.DocGia;
-import Oracle.Backend.Model.NhanVien;
-import Oracle.Backend.Repository.DocGiaRepository;
 import Oracle.Backend.Service.DocGiaService;
-import Oracle.Backend.Service.NhanVienService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

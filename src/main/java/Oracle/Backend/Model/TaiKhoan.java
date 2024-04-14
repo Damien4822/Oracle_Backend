@@ -33,7 +33,6 @@ public class TaiKhoan implements UserDetails {
     @Enumerated(EnumType.STRING)
     @Column(name = "PhanLoaiTaiKhoan",columnDefinition = "nvarchar2(50)")
     private Role phanLoaiTaiKhoan;
-
     public int getMaTK() {
         return maTK;
     }

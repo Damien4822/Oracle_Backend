@@ -1,8 +1,6 @@
 package Oracle.Backend.Service;
 
-import Oracle.Backend.Model.TacGia;
 import Oracle.Backend.Model.TaiKhoan;
-import Oracle.Backend.Repository.TacGiaRepository;
 import Oracle.Backend.Repository.TaiKhoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +26,9 @@ public class TaiKhoanService {
     }
     public void delete(Integer id){
         repo.deleteById(id);
+    }
+    public Optional<TaiKhoan> getByTenDangNhap(String ten)
+    {
+        return repo.findTaiKhoanByTenDangNhap(ten);
     }
 }

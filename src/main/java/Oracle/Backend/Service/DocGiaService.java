@@ -1,12 +1,10 @@
 package Oracle.Backend.Service;
 
-import Oracle.Backend.Model.ChucVu;
 import Oracle.Backend.Model.DocGia;
-import Oracle.Backend.Repository.ChucVuRepository;
+import Oracle.Backend.Model.TaiKhoan;
 import Oracle.Backend.Repository.DocGiaRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +31,9 @@ public class DocGiaService {
     }
     public void delete(Integer id){
         repo.deleteById(id);
+    }
+    public DocGia getByTaiKhoan(Optional<TaiKhoan> tk) {
+        DocGia optional =repo.findDocGiaByTaiKhoan(tk);
+        return optional;
     }
 }
