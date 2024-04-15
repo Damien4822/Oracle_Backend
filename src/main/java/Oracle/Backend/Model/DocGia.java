@@ -78,8 +78,6 @@ public class DocGia {
         this.tenDocGia = tenDocGia;
     }
 
-
-
     public PhanLoaiDocGia getPhanloai() {
         return phanloai;
     }
@@ -112,14 +110,6 @@ public class DocGia {
 
     public void setAvatar(@Nullable Blob avatar) {
         this.avatar = avatar;
-    }
-
-    public String getSdt() {
-        return SDT;
-    }
-
-    public void setSdt(String sdt) {
-        this.SDT = sdt;
     }
 
     @Nullable
