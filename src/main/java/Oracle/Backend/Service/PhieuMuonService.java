@@ -29,4 +29,8 @@ public class PhieuMuonService {
     public void delete(Integer id){
         repo.deleteById(id);
     }
+    public List<PhieuMuon> getAllByDocGiaId(int id)
+    {
+        return repo.findAllByDocGiaId(id);
+    }
 }

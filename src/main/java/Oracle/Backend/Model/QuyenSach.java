@@ -27,14 +27,11 @@ public class QuyenSach {
     private int gia;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "MaDauSach",nullable = false)
-
     private DauSach dauSach;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "MaNXB",nullable = false)
-
     private NhaXuatBan nhaXuatBan;
     @ManyToMany(mappedBy = "quyenSachList",fetch = FetchType.EAGER)
-
     private List<DichGia> dichGiaList;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="MaTinhTrang",nullable = false)

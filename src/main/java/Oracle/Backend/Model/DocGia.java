@@ -31,11 +31,13 @@ public class DocGia {
 
     @Lob
     @Nullable
+    @JsonIgnore
     private Blob avatar;
     @Column(name = "SDT", columnDefinition = "nvarchar2(11)", nullable = false,length = 11)
     private String SDT;
     @Lob
     @Nullable
+    @JsonIgnore
     private Blob hinhAnhMinhChung;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "MaPLDG",nullable = false)

@@ -2,8 +2,10 @@ package Oracle.Backend.Controller.DocGia;
 
 import Oracle.Backend.Model.ChiTietPhieuMuon;
 import Oracle.Backend.Model.PhieuMuon;
+import Oracle.Backend.Model.QuyenSach;
 import Oracle.Backend.Service.ChiTietPhieuMuonService;
 import Oracle.Backend.Service.PhieuMuonService;
+import Oracle.Backend.Service.QuyenSachService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,10 +22,12 @@ public class DocGia_PhieuMuonController {
     private PhieuMuonService service;
     @Autowired
     private ChiTietPhieuMuonService CTservice;
-    @GetMapping("/phieumuon/index")
-    public ResponseEntity<List<PhieuMuon>> getAll()
+    @Autowired
+    private QuyenSachService quyenSachService;
+    @GetMapping("/{id}/phieumuon/index")
+    public ResponseEntity<List<PhieuMuon>> getAllByDocGiaId(@PathVariable int id)
     {
-        return ResponseEntity.ok(service.getAll());
+        return ResponseEntity.ok(service.getAllByDocGiaId(id));
     }
     @GetMapping("/phieumuon/{id}")
     public ResponseEntity<PhieuMuon> getOne(@PathVariable int id) {
@@ -67,5 +71,11 @@ public class DocGia_PhieuMuonController {
         }
         List<ChiTietPhieuMuon> chiTietPhieuMuonList = CTservice.getAllByMaPhieuMuon(id);
         return ResponseEntity.ok(chiTietPhieuMuonList);
+    }
+    @GetMapping("/quyensach/index")
+    public ResponseEntity<List<QuyenSach>> getAll()
+    {
+        List<QuyenSach> list = quyenSachService.getAll();
+        return ResponseEntity.ok(list);
     }
 }

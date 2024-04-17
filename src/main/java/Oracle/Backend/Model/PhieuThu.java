@@ -21,7 +21,7 @@ public class PhieuThu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MaPhieuThu")
     private int id;
-    private DATE ngayLap;
+    private Date ngayLap;
     @Column(columnDefinition = "integer")
     private BigInteger soTien;
     private String noiDung;
@@ -47,11 +47,11 @@ public class PhieuThu {
         this.id = id;
     }
 
-    public DATE getNgayLap() {
+    public Date getNgayLap() {
         return ngayLap;
     }
 
-    public void setNgayLap(DATE ngayLap) {
+    public void setNgayLap(Date ngayLap) {
         this.ngayLap = ngayLap;
     }
 

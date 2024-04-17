@@ -18,8 +18,8 @@ public class TheDocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maTheDocGia;
-    private DATE ngayLap;
-    private DATE ngayHetHan;
+    private Date ngayLap;
+    private Date ngayHetHan;
     private byte tinhTrang;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "MaDocGia",nullable = false)
@@ -37,19 +37,19 @@ public class TheDocGia {
         this.maTheDocGia = maTheDocGia;
     }
 
-    public DATE getNgayLap() {
+    public Date getNgayLap() {
         return ngayLap;
     }
 
-    public void setNgayLap(DATE ngayLap) {
+    public void setNgayLap(Date ngayLap) {
         this.ngayLap = ngayLap;
     }
 
-    public DATE getNgayHetHan() {
+    public Date getNgayHetHan() {
         return ngayHetHan;
     }
 
-    public void setNgayHetHan(DATE ngayHetHan) {
+    public void setNgayHetHan(Date ngayHetHan) {
         this.ngayHetHan = ngayHetHan;
     }
 

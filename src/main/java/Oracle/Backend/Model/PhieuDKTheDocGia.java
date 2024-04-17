@@ -19,7 +19,7 @@ public class PhieuDKTheDocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maPhieuDK;
-    private DATE ngayLap;
+    private Date ngayLap;
     @Nullable
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MaNV",nullable = false)
@@ -38,11 +38,11 @@ public class PhieuDKTheDocGia {
         this.maPhieuDK = maPhieuDK;
     }
 
-    public DATE getNgayLap() {
+    public Date getNgayLap() {
         return ngayLap;
     }
 
-    public void setNgayLap(DATE ngayLap) {
+    public void setNgayLap(Date ngayLap) {
         this.ngayLap = ngayLap;
     }
 

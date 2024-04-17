@@ -21,7 +21,7 @@ public class NhanVien {
     private int id;
     @Column(name = "TenNV",columnDefinition = "nvarchar2(40)")
     private String tenNV;
-    private DATE NgaySinh;
+    private Date NgaySinh;
     @Column(name="Email",columnDefinition = "nvarchar2(50)",unique = true)
     private String email;
     @Column(name="SDT",columnDefinition = "nvarchar2(14)",unique = true)
@@ -50,11 +50,11 @@ public class NhanVien {
         this.tenNV = tenNV;
     }
 
-    public DATE getNgaySinh() {
+    public Date getNgaySinh() {
         return NgaySinh;
     }
 
-    public void setNgaySinh(DATE ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         NgaySinh = ngaySinh;
     }
 
