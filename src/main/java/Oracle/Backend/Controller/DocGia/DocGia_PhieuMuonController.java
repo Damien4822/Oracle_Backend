@@ -4,6 +4,7 @@ import Oracle.Backend.Model.ChiTietPhieuMuon;
 import Oracle.Backend.Model.PhieuMuon;
 import Oracle.Backend.Model.QuyenSach;
 import Oracle.Backend.Service.ChiTietPhieuMuonService;
+import Oracle.Backend.Service.DocGiaService;
 import Oracle.Backend.Service.PhieuMuonService;
 import Oracle.Backend.Service.QuyenSachService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,8 @@ public class DocGia_PhieuMuonController {
     private ChiTietPhieuMuonService CTservice;
     @Autowired
     private QuyenSachService quyenSachService;
+    @Autowired
+    private DocGiaService docGiaService;
     @GetMapping("/{id}/phieumuon/index")
     public ResponseEntity<List<PhieuMuon>> getAllByDocGiaId(@PathVariable int id)
     {
@@ -38,11 +41,19 @@ public class DocGia_PhieuMuonController {
         else
             return ResponseEntity.notFound().build();
     }
-    @PostMapping("/phieumuon/create")
-    public ResponseEntity<PhieuMuon> create(@RequestBody PhieuMuon phieu) {
-        phieu.setNhanVien(null);
-        service.save(phieu);
-        return ResponseEntity.ok(phieu);
+    @PostMapping("/{id}/phieumuon/create")
+    @ResponseBody
+    public ResponseEntity<PhieuMuon> create(@PathVariable int id,@RequestBody PhieuMuon phieu) {
+        PhieuMuon create = new PhieuMuon();
+        create.setDocGia(docGiaService.getById(id));
+        create.setTinhTrangPhieu(false);
+        create.setNhanVien(phieu.getNhanVien());
+        create.setNgayMuon(phieu.getNgayMuon());
+        create.setNgayLap(phieu.getNgayLap());
+        create.setNgayTra(phieu.getNgayTra());
+        create.setTongTien(phieu.getTongTien());
+        service.save(create);
+        return ResponseEntity.ok(create);
     }
     @PutMapping("/phieumuon/{id}")
     public ResponseEntity<PhieuMuon> update(@PathVariable int id, @RequestBody PhieuMuon pm) {
@@ -63,10 +74,11 @@ public class DocGia_PhieuMuonController {
         return ResponseEntity.ok(chiTietPhieuMuonList);
     }
     @PostMapping("/phieumuon/{id}/ctphieumuon/create")
-    public ResponseEntity<List<ChiTietPhieuMuon>> getAll(@PathVariable int id,List<ChiTietPhieuMuon> list)
-    {
+    public ResponseEntity<List<ChiTietPhieuMuon>> getAll(@PathVariable int id,@RequestBody List<ChiTietPhieuMuon> list)
+    {   PhieuMuon phieu = service.getById(id);
         for(ChiTietPhieuMuon ct : list)
         {
+            ct.setPhieuMuon(phieu);
             CTservice.save(ct);
         }
         List<ChiTietPhieuMuon> chiTietPhieuMuonList = CTservice.getAllByMaPhieuMuon(id);
@@ -77,5 +89,11 @@ public class DocGia_PhieuMuonController {
     {
         List<QuyenSach> list = quyenSachService.getAll();
         return ResponseEntity.ok(list);
+    }
+    @GetMapping("/quyensach/{id}")
+    public ResponseEntity<QuyenSach> getOneById(@PathVariable int id)
+    {
+        QuyenSach get = quyenSachService.getById(id);
+        return ResponseEntity.ok(get);
     }
 }

@@ -38,8 +38,9 @@ public class TacGiaController {
         service.save(tg);
         return ResponseEntity.ok(tg);
     }
-    @PutMapping("/tacgia/{id}")
-    public ResponseEntity<TacGia> update(@PathVariable int id, @RequestBody TacGia tg) {
+    @PutMapping("/tacgia")
+    public ResponseEntity<TacGia> update(@RequestBody TacGia tg) {
+
         service.save(tg);
         return ResponseEntity.ok(tg);
     }

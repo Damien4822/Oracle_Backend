@@ -30,8 +30,10 @@ public class DauSach {
         @ManyToMany(mappedBy = "dauSachList",fetch = FetchType.EAGER)
         @JsonBackReference
         private List<TacGia> tacGiaList;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<QuyenSach> quyenSaches;
 
-        public int getId() {
+    public int getId() {
             return id;
         }
 

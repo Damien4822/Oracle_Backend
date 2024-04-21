@@ -36,6 +36,7 @@ public class DocGia_DocGiaController {
         }
         else return ResponseEntity.notFound().build();
     }
+
    @PutMapping("/update")
     private ResponseEntity<DocGia> update(@RequestBody DocGia docGia)
     {

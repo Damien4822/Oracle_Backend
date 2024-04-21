@@ -2,6 +2,7 @@ package Oracle.Backend.Service;
 
 import Oracle.Backend.Model.DichGia;
 import Oracle.Backend.Model.NhanVien;
+import Oracle.Backend.Model.TaiKhoan;
 import Oracle.Backend.Repository.DichGiaRepository;
 import Oracle.Backend.Repository.NhanVienRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,9 @@ public class NhanVienService {
     }
     public void delete(Integer id){
         repo.deleteById(id);
+    }
+    public NhanVien getByTaiKhoan(TaiKhoan tk)
+    {
+       return repo.findNhanVienByTaiKhoan(tk);
     }
 }

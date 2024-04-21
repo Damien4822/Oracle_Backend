@@ -31,6 +31,7 @@ public class DichGia {
     @Nullable
     @Column(columnDefinition = "number(4,0)")
     private Date namMat;
+    @Nullable
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "QuyenSach_dichGiaList",

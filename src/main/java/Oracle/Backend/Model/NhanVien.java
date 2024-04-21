@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import oracle.sql.DATE;
 
 import java.sql.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -33,6 +34,16 @@ public class NhanVien {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaTK",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;
+    @OneToMany(cascade = CascadeType.PERSIST)
+    private List<PhieuMuon> phieuMuons;
+
+    public List<PhieuMuon> getPhieuMuons() {
+        return phieuMuons;
+    }
+
+    public void setPhieuMuons(List<PhieuMuon> phieuMuons) {
+        this.phieuMuons = phieuMuons;
+    }
 
     public int getId() {
         return id;

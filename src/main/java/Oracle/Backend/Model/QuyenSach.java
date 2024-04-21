@@ -3,6 +3,7 @@ package Oracle.Backend.Model;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,12 +26,13 @@ public class QuyenSach {
     private int namTaiBan;
     @Column(columnDefinition = "integer")
     private int gia;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     @JoinColumn(name= "MaDauSach",nullable = false)
     private DauSach dauSach;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "MaNXB",nullable = false)
     private NhaXuatBan nhaXuatBan;
+    @Nullable
     @ManyToMany(mappedBy = "quyenSachList",fetch = FetchType.EAGER)
     private List<DichGia> dichGiaList;
     @ManyToOne(fetch = FetchType.EAGER)

@@ -1,8 +1,6 @@
 package Oracle.Backend.Controller.Admin;
 
-import Oracle.Backend.Model.TacGia;
 import Oracle.Backend.Model.TaiKhoan;
-import Oracle.Backend.Service.TacGiaService;
 import Oracle.Backend.Service.TaiKhoanService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +42,9 @@ public class TaiKhoanController {
     }
     @DeleteMapping("/taikhoan/{id}")
     public ResponseEntity<?> delete(@PathVariable int id) {
-        service.delete(id);
+        TaiKhoan tk = service.getById(id);
+        tk.setTinhTrang(2);
+        service.save(tk);
         return ResponseEntity.accepted().build();
     }
 }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Blob;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -47,6 +48,16 @@ public class DocGia {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MaTaiKhoan",referencedColumnName = "MaTK")
     private TaiKhoan taiKhoan;
+    @OneToMany(cascade = CascadeType.PERSIST)
+    private List<PhieuMuon> phieuMuons;
+
+    public List<PhieuMuon> getPhieuMuons() {
+        return phieuMuons;
+    }
+
+    public void setPhieuMuons(List<PhieuMuon> phieuMuons) {
+        this.phieuMuons = phieuMuons;
+    }
 
     public int getId() {
         return id;

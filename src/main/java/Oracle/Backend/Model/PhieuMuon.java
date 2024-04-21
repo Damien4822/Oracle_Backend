@@ -24,17 +24,18 @@ public class PhieuMuon {
     private Date ngayTra;
     @Column(columnDefinition = "integer")
     private int tongTien;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="MaDocGia",nullable = false)
+    @Nullable
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @JoinColumn(name="MaDocGia",nullable = true)
     @JsonIgnore
     private DocGia docGia;
     @Nullable
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="MaNV",nullable = false)
+    @JoinColumn(name="MaNV",nullable = true)
     @JsonIgnore
     private NhanVien nhanVien;
     private Boolean tinhTrangPhieu;
-    @Nullable
+
     public NhanVien getNhanVien() {
         return nhanVien;
     }
